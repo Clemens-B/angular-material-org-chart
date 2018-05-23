@@ -1,0 +1,122 @@
+[ng-cloak] {
+  display: none;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Toolbar area */
+
+md-toolbar h1 {
+  margin: auto;
+}
+
+
+
+/* Primary content area */
+
+#content {
+  min-width: 1280px;
+}
+
+.tree ul { 
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+.tree li {
+  float: left;
+  text-align: center;
+  list-style: none;
+  position: relative;
+  padding: 20px 5px 0px 5px;
+}
+/* Verbindungen zeichnen */
+.tree li:before,
+.tree li:after {
+  content:"";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid rgb(121,85,72);
+  width: 50%;
+  height: 20px;
+}
+.tree li:after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid rgb(121,85,72);
+}
+/* Entfernung links-rectsverbindungen ohne zwillinge */
+.tree li:only-child:after,
+.tree li:only-child:before {
+  display: none;
+}
+/* Entfernung der verbindungen vom rechten und linken knotens */
+.tree li:first-child:before,
+.tree li:last-child:after {
+  border: 0 none;
+}
+/* verbindung für den letzten knoten */
+.tree li:last-child:before {
+  border-right: 2px solid rgb(121,85,72);
+  border-radius: 0 5px 0 0;
+} 
+.tree li:first-child:after {
+  border-radius: 5px 0 0 0;
+}
+/* mittige Linien definieren */
+.tree ul ul:before,
+.tree ul ul ul:before {
+  content:"";
+  position: absolute;
+  top: 0;
+  
+  border-left: 2px solid rgb(121,85,72);
+  width: 0;
+  height: 20px;
+}
+.tree ul ul ul:before {
+  
+}
+.tree li a {
+  border: 2px solid rgb(121,85,72);
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: arial, verdana, tahoma;
+  font-size: 12px;
+  text-align: right;
+  background-color: #004177;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.md-button .title {
+  font-weight: bold;
+  font-size: 0.7em;
+  text-transform: none;
+}
+
+/* Utils */
+
+.avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom: 0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform: scale(0.70);
+}

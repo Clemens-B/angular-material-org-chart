@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="userTree">
+  <md-button class="md-raised" ng-click="$ctrl.showDetails({user:user})" ng-class="{'selected' : user === $ctrl.selected }">
+      <md-icon md-svg-icon="svg-3" class="avatar"></md-icon>
+      {{user.name}} <br>
+      <span class="title">{{user.title}}&nbsp;</span>
+    </md-button>
+    
+  <ul ng-if="user.children">
+      <li ng-repeat="user in user.children" ng-include="'userTree'">           
+      </li>
+  </ul>
+</script>
+<div class="tree">
+  <ul>
+    <li ng-repeat="user in $ctrl.users" ng-include="'userTree'"></li>
+  </ul>
+</div>
+
+<md-button class="md-fab md-fab-bottom-right" ng-click="$ctrl.share($event)" aria-label="Share">
+    <md-icon md-svg-icon="share" ></md-icon>
+  </md-button>
